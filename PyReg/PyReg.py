@@ -4,6 +4,7 @@ print ("========== PyReg ===========")
 print ("Welkom bij PyReg, het Python KassaSysteem voor en door DeveloperLand!")
 print ("Tel de kassa, en geef op hoeveel er nu in zit.")
 bedragInKassaBegin = float(input("Bedrag in kassa? "))
+# Start programma, stel de nodige variabelen in
 keuze = 0
 dagTotaal = 0
 aantalBonnen = 0
@@ -11,6 +12,8 @@ dagTotaalTerug = 0
 
 while(not keuze == "9" ):
     os.system('cls')
+# Laat de gebruiker een keuze maken
+# Herhaal tot de gebruiker aangeeft dat het programma afgesloten moet worden
     print ("======== HOOFDMENU =========")
     print ("1. Nieuwe bon")
     print ("2. Retour")
@@ -19,13 +22,14 @@ while(not keuze == "9" ):
     print ("============================")
 
     keuze = input("Maak uw keuze en druk op <ENTER>.")
-
+    
     if (keuze == "1"):
         bestelKeuze = 0
         bonTotaal = 0
         bonString = ""
         while(not bestelKeuze == "9"):
-            print ("========= BON MENU =========")
+# Laat de gebruiker een keuze maken
+            print ("========= BON MENU =========")   # Toon bon-menu
             print ("Bon "+ str(aantalBonnen))
             print( "1. Volwassene                     € 19,-")
             print( "2. Kinderen tot 12jr              € 9,-")
@@ -38,7 +42,7 @@ while(not keuze == "9" ):
             print ("============================")
             bestelKeuze = input("Maak uw keuze en druk op <ENTER>.")
 
-            if ( bestelKeuze == "1"):
+            if ( bestelKeuze == "1"):    # Voeg één volwasseneticket toe aan de bon
                 bonTotaal = bonTotaal + 19
                 bonString = bonString + "1x Volwassene                  € 19\r\n"
             elif ( bestelKeuze == "2"):
@@ -50,10 +54,10 @@ while(not keuze == "9" ):
             elif ( bestelKeuze == "4"):
                 bonTotaal = bonTotaal + 4.50
                 bonString = bonString + "1x Parkkaart                   € 4,50\r\n"
-            elif ( bestelKeuze == "5"):
+            elif ( bestelKeuze == "5"):    # Voeg een kinderwagen/bolderkar toe aan de bon
                 bonTotaal = bonTotaal + 6
                 bonString = bonString + "1x kinderwagen/bolderkarhuur   € 6\r\n"
-            elif ( bestelKeuze == "6"):
+            elif ( bestelKeuze == "6"):    # Voeg een parkeerkaart toe aan de bon
                 bonTotaal = bonTotaal + 9
                 bonString = bonString + "1x Parkeerdagkaart             € 9\r\n"
             elif(bestelKeuze == "9"):
@@ -70,11 +74,16 @@ while(not keuze == "9" ):
                 bestelKeuze = 9
                 bonTotaal = 0
                 bonString = ""
+                
+# Verwerk retourbedrag in dagtotaal
+
     elif(keuze == "2"):
         print ("Uitvoeren terugbetaling")
         terugTeGeven = float(input( "Bedrag originele bon: "))
         reden = input("Reden retour: ")
         dagTotaalTerug = terugTeGeven
+        
+# Gebruiker wil de dagtotalen zien
     elif(keuze == "3"):
         print ("======= DAG TOTALEN ========")
         print ("In kassa begin:   " + str(bedragInKassaBegin))
@@ -82,16 +91,18 @@ while(not keuze == "9" ):
         print ("Retour:           " + str(dagTotaalTerug))
         print ("In kassa:         " + str( bedragInKassaBegin + dagTotaal - dagTotaalTerug ))
         input("Druk op <ENTER> om door te gaan.")
+        
+# Gebruiker wil het programma afsluiten, vraag om bedrag in kassa
 inKassa = float(input("Hoeveel zit er nu in de kassa?")) 
 while(not inKassa == (bedragInKassaBegin + dagTotaal - dagTotaalTerug )):
     print("Je hebt een kassaverschil! Tel de kassa opnieuw")
     inKassa = float(input("Hoeveel zit er nu in de kassa?")) 
 
 os.system('cls')
-print("Kassa klopt, programma wordt afgesloten.")
+print("Kassa klopt, programma wordt afgesloten.")  # Kassa is correct afgesloten, toon dagtotalen
 print ("======== DAGTOTALEN ========")
 print ("Aantal bonnen: " + str(aantalBonnen))
 print ("Verkocht:      " + str(dagTotaal))
-print ("Totaal retour: " + str(dagTotaalTerug))
+print ("Totaal retour: " + str(dagTotaalTerug))  # Toon retourbedrag
 print ("In kassa:      " + str(inKassa))
 print ("============================")

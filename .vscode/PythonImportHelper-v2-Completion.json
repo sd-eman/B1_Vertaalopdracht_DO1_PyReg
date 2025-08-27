@@ -1,0 +1,65 @@
+[
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "bedragInKassaBegin",
+        "kind": 5,
+        "importPath": "PyReg.PyReg",
+        "description": "PyReg.PyReg",
+        "peekOfCode": "bedragInKassaBegin = float(input(\"Bedrag in kassa? \"))\n# Start programma, stel de nodige variabelen in\nkeuze = 0\ndagTotaal = 0\naantalBonnen = 0\ndagTotaalTerug = 0\nwhile(not keuze == \"9\" ):\n    os.system('cls')\n# Laat de gebruiker een keuze maken\n# Herhaal tot de gebruiker aangeeft dat het programma afgesloten moet worden",
+        "detail": "PyReg.PyReg",
+        "documentation": {}
+    },
+    {
+        "label": "keuze",
+        "kind": 5,
+        "importPath": "PyReg.PyReg",
+        "description": "PyReg.PyReg",
+        "peekOfCode": "keuze = 0\ndagTotaal = 0\naantalBonnen = 0\ndagTotaalTerug = 0\nwhile(not keuze == \"9\" ):\n    os.system('cls')\n# Laat de gebruiker een keuze maken\n# Herhaal tot de gebruiker aangeeft dat het programma afgesloten moet worden\n    print (\"======== HOOFDMENU =========\")\n    print (\"1. Nieuwe bon\")",
+        "detail": "PyReg.PyReg",
+        "documentation": {}
+    },
+    {
+        "label": "dagTotaal",
+        "kind": 5,
+        "importPath": "PyReg.PyReg",
+        "description": "PyReg.PyReg",
+        "peekOfCode": "dagTotaal = 0\naantalBonnen = 0\ndagTotaalTerug = 0\nwhile(not keuze == \"9\" ):\n    os.system('cls')\n# Laat de gebruiker een keuze maken\n# Herhaal tot de gebruiker aangeeft dat het programma afgesloten moet worden\n    print (\"======== HOOFDMENU =========\")\n    print (\"1. Nieuwe bon\")\n    print (\"2. Retour\")",
+        "detail": "PyReg.PyReg",
+        "documentation": {}
+    },
+    {
+        "label": "aantalBonnen",
+        "kind": 5,
+        "importPath": "PyReg.PyReg",
+        "description": "PyReg.PyReg",
+        "peekOfCode": "aantalBonnen = 0\ndagTotaalTerug = 0\nwhile(not keuze == \"9\" ):\n    os.system('cls')\n# Laat de gebruiker een keuze maken\n# Herhaal tot de gebruiker aangeeft dat het programma afgesloten moet worden\n    print (\"======== HOOFDMENU =========\")\n    print (\"1. Nieuwe bon\")\n    print (\"2. Retour\")\n    print (\"3. Toon kassatotaal\")",
+        "detail": "PyReg.PyReg",
+        "documentation": {}
+    },
+    {
+        "label": "dagTotaalTerug",
+        "kind": 5,
+        "importPath": "PyReg.PyReg",
+        "description": "PyReg.PyReg",
+        "peekOfCode": "dagTotaalTerug = 0\nwhile(not keuze == \"9\" ):\n    os.system('cls')\n# Laat de gebruiker een keuze maken\n# Herhaal tot de gebruiker aangeeft dat het programma afgesloten moet worden\n    print (\"======== HOOFDMENU =========\")\n    print (\"1. Nieuwe bon\")\n    print (\"2. Retour\")\n    print (\"3. Toon kassatotaal\")\n    print (\"9. Afsluiten\")",
+        "detail": "PyReg.PyReg",
+        "documentation": {}
+    },
+    {
+        "label": "inKassa",
+        "kind": 5,
+        "importPath": "PyReg.PyReg",
+        "description": "PyReg.PyReg",
+        "peekOfCode": "inKassa = float(input(\"Hoeveel zit er nu in de kassa?\")) \nwhile(not inKassa == (bedragInKassaBegin + dagTotaal - dagTotaalTerug )):\n    print(\"Je hebt een kassaverschil! Tel de kassa opnieuw\")\n    inKassa = float(input(\"Hoeveel zit er nu in de kassa?\")) \nos.system('cls')\nprint(\"Kassa klopt, programma wordt afgesloten.\")  # Kassa is correct afgesloten, toon dagtotalen\nprint (\"======== DAGTOTALEN ========\")\nprint (\"Aantal bonnen: \" + str(aantalBonnen))\nprint (\"Verkocht:      \" + str(dagTotaal))\nprint (\"Totaal retour: \" + str(dagTotaalTerug))  # Toon retourbedrag",
+        "detail": "PyReg.PyReg",
+        "documentation": {}
+    }
+]
